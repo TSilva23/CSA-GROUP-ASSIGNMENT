@@ -121,6 +121,9 @@ class TranslationPipelineStack(Stack):
                                                      runtime=_lambda.Runtime.PYTHON_3_8,
                                                      handler="disable_cloudtrail.handler",
                                                      code=_lambda.Code.from_asset("lambda"),
+                                                     environment={
+                                                         "TRAIL_NAME": "YourTrailName"  # specify your trail name here
+                                                     },
                                                      log_retention=logs.RetentionDays.ONE_DAY,
                                                      timeout=Duration.minutes(5))
 
@@ -138,6 +141,9 @@ class TranslationPipelineStack(Stack):
                                                on_create=cr.AwsSdkCall(
                                                    service="CloudTrail",
                                                    action="stopLogging",
+                                                   parameters={
+                                                       "Name": "YourTrailName"  # specify your trail name here
+                                                   },
                                                    physical_resource_id=cr.PhysicalResourceId.of("DisableCloudTrailCustomResource")
                                                ),
                                                policy=cr.AwsCustomResourcePolicy.from_statements([
