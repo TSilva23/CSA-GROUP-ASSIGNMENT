@@ -1,6 +1,6 @@
-### Translation Pipeline Project
+# Translation Pipeline Project
 
-#### Overview
+### Overview
 This project involves creating a translation pipeline using the AWS Cloud Development Kit (CDK) for Python. The pipeline is capable of handling audio transcription, translation, and text-to-speech synthesis, using various AWS services including S3, Step Functions, Transcribe, Translate, and Polly. The project also incorporates automation and security considerations with EventBridge rules and Lambda functions.
 
 The goal of the project is to automate the process of translating audio files uploaded to an S3 bucket and generate synthesized speech in the target language.
@@ -21,7 +21,7 @@ The main components of the project are:
 - Python 3
 - AWS CDK (AWS Cloud Development Kit)
 
-##### Installation
+#### Installation
 1. Clone the repository and navigate to the project directory.
 2. Create a virtual environment:
     ```bash
